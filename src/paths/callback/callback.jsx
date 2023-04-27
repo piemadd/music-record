@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 //import SampleUser from "../../sample_data/user.json";
 
 const songDataToSongsList = (songData) => {
-  console.log(songData)
+  console.log(songData);
 
   return songData.items
     .map((song) => {
@@ -25,7 +25,7 @@ const generateListOfUniqueAlbumImages = (songs) => {
   const imagesToReturn = [];
 
   while (imagesToReturn.length < 49) {
-    console.log('toreturn less')
+    console.log("toreturn less");
     images.forEach((image) => {
       if (imagesToReturn.length >= 49) return;
       imagesToReturn.push(image);
@@ -71,7 +71,7 @@ const Callback = () => {
           .then((res) => res.json())
           .then((songData) => {
             setTopSongs(songData);
-            
+
             const processedSongs = songDataToSongsList(songData);
 
             setSongs(processedSongs);
@@ -88,7 +88,7 @@ const Callback = () => {
               userData.images.push({
                 url: "/images/no_pfp.png",
               });
-              setUser(userData)
+              setUser(userData);
             }
 
             setLoading(false);
@@ -108,7 +108,9 @@ const Callback = () => {
             <p>
               <a href='/'>Logout</a>
             </p>
-            <p>Save Image</p>
+            {/*
+              <p>Save Image</p>
+            */}
           </div>
           <div id='album'>
             <div id='album-record'>
