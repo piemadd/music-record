@@ -2,7 +2,7 @@ const Index = () => {
   const baseURL =
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000"
-      : "https://galaxy.piemadd.com";
+      : "https://album.piemadd.com";
 
   return (
     <div id="title">
