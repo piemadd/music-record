@@ -84,7 +84,7 @@ p:nth-child(2).titleScreen {
   width: calc(100% - 1rem);
   aspect-ratio: 1;
   border-radius: 50%;
-  background-image: url("./images/vinyl_back.png");
+  background-image: url("https://album.piemadd.com/images/vinyl_back.png");
   background-size: cover;
   margin-bottom: -40%;
   display: flex;
