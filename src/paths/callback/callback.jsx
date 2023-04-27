@@ -124,13 +124,10 @@ const Callback = () => {
               </div>
             </div>
           </div>
-          <br />
           <div id='album-score'>
             <p>{user.display_name}</p>
             <p>{generateMusicObscurityScore(songs)}% Obscure</p>
           </div>
-
-          <br />
         </>
       )}
       <p>
