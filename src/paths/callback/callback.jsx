@@ -97,13 +97,14 @@ const Callback = () => {
   }, []);
   return (
     <>
-      <h1>Your Record</h1>
+      <h1>Your Album</h1>
       {loading ? (
         <div id='album-score'>
           <p>Loading....</p>
         </div>
       ) : (
         <>
+        <p>album.piemadd.com</p>
           <div className='links'>
             <p>
               <a href='/'>Logout</a>
