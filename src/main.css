@@ -93,8 +93,8 @@ p:nth-child(2).titleScreen {
 }
 
 #album-record img {
-  width: 35%;
-  height: 35%;
+  width: 36%;
+  height: 36%;
   border-radius: 50%;
   object-fit: cover;
 }
