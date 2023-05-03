@@ -19,6 +19,7 @@ const Index = () => {
       <p>
         Made with ❤️ by <a href='https://piemadd.com/'>Piero</a> in Chicago
       </p>
+      <p>This site uses Google Analytics</p>
     </div>
   );
 };
