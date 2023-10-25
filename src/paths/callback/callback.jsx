@@ -46,6 +46,7 @@ const generateMusicObscurityScore = (songs) => {
 const Callback = () => {
   const [topSongs, setTopSongs] = useState([]);
   const [user, setUser] = useState([]);
+  const [userImage, setUserImage] = useState("/images/no_pfp.png");
   const [songs, setSongs] = useState([]);
   const [images, setImages] = useState([]);
   const [musicObscurityScore, setMusicObscurityScore] = useState(0);
@@ -63,6 +64,11 @@ const Callback = () => {
       .then((res) => res.json())
       .then((userData) => {
         setUser(userData);
+
+        const sortedImages = userData.images.sort((a, b) => b.width - a.width);
+
+        if (sortedImages.length > 0) setUserImage(sortedImages[0].url);
+
         fetch("https://api.spotify.com/v1/me/top/tracks?limit=50&offset=0", {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -84,13 +90,6 @@ const Callback = () => {
             console.log("images:", images);
             console.log("musicObscurityScore:", musicObscurityScore);
 
-            if (userData.images.length == 0) {
-              userData.images.push({
-                url: "/images/no_pfp.png",
-              });
-              setUser(userData);
-            }
-
             setLoading(false);
           });
       });
@@ -104,7 +103,7 @@ const Callback = () => {
         </div>
       ) : (
         <>
-        <p>album.piemadd.com</p>
+          <p>album.piemadd.com</p>
           <div className='links'>
             <p>
               <a href='/'>Logout</a>
@@ -115,7 +114,7 @@ const Callback = () => {
           </div>
           <div id='album'>
             <div id='album-record'>
-              <img src={user.images[0].url} />
+              <img src={userImage} />
             </div>
             <div id='album-cover'>
               <div id='album-art'>
